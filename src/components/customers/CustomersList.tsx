@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import * as env from '../../constants';
 import { Customer } from '../../interfaces/Customer';
+import moment from 'moment';
 
 export default function CustomersList() {
   const [customersList, setCustomersList] = useState<Customer[]>([]);
@@ -25,6 +26,7 @@ export default function CustomersList() {
             <th>DOB</th>
             <th>Email</th>
             <th>Registered Date</th>
+            <th>Phone Number</th>
             <th>Plan Id</th>
           </tr>
         </thead>
@@ -35,7 +37,8 @@ export default function CustomersList() {
                 <td>{customer.name}</td>
                 <td>{customer.dob}</td>
                 <td>{customer.email}</td>
-                <td>{customer.registeredDate}</td>
+                <td>{moment(customer.registeredDate).format('YYYY-MM-DD HH:MM:SS')}</td>
+                <td>{customer.assignedMobileNumber}</td>
                 <td>{customer.planId}</td>
               </tr>
             )

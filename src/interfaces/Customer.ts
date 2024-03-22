@@ -3,6 +3,7 @@ export interface Customer {
   name: string,
   dob: string,
   email: string,
+  assignedMobileNumber: string,
   registeredDate: string,
   planId: string
 }

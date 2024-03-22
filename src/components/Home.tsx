@@ -2,14 +2,17 @@ import { useNavigate, Outlet } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
-  const handleClick = () => {
+  const redirectToRegister = () => {
     navigate('/register');
+  }
+  const redirectToRenewPlan = () => {
+    navigate('/renew-plan');
   }
   return (
     <div>
       <span>
-        <button id='new-customers' onClick={handleClick}>New Customers</button>
-        <button id='exist-customers'>Existing Customers</button>
+        <button id='new-customers' onClick={redirectToRegister}>New Customers</button>
+        <button id='exist-customers' onClick={redirectToRenewPlan}>Existing Customers</button>
       </span>
       <Outlet />
     </div>
