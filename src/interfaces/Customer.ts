@@ -1,0 +1,8 @@
+export interface Customer {
+  id: string,
+  name: string,
+  dob: string,
+  email: string,
+  registeredDate: string,
+  planId: string
+}

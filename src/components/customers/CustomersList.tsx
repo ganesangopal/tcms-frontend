@@ -1,18 +1,10 @@
 import { useEffect, useState } from "react";
 import * as env from '../../constants';
+import { Customer } from '../../interfaces/Customer';
 
-export interface Customer {
-  id: string,
-  name: string,
-  dob: string,
-  email: string,
-  registeredDate: string 
-}
 export default function CustomersList() {
   const [customersList, setCustomersList] = useState<Customer[]>([]);
   useEffect(() => {
-
-    setCustomersList([]);
     fetch(`${env.default.REACT_APP_API_ENDPOINT}/api/users/list`)
       .then((res) => {
         return res.json();
@@ -33,6 +25,7 @@ export default function CustomersList() {
             <th>DOB</th>
             <th>Email</th>
             <th>Registered Date</th>
+            <th>Plan Id</th>
           </tr>
         </thead>
         <tbody>
@@ -43,6 +36,7 @@ export default function CustomersList() {
                 <td>{customer.dob}</td>
                 <td>{customer.email}</td>
                 <td>{customer.registeredDate}</td>
+                <td>{customer.planId}</td>
               </tr>
             )
           })}

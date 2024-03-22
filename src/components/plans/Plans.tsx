@@ -1,16 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as env from '../../constants';
+import { Plan } from '../../interfaces/Plan';
 
-export interface Plan {
-  id: number,
-  name: string,
-  cost: number,
-  validity: number,
-  status: string
-}
-
-export default function PlansList() {
+export default function Plans() {
   const [plans, setPlans] = useState<Plan[]>([]);
   const navigate = useNavigate();
   useEffect(() => {

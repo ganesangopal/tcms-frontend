@@ -59,7 +59,6 @@ export default function RegisterCustomer() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userObj)
       };
-      env.default.REACT_APP_API_ENDPOINT
       fetch(`${env.default.REACT_APP_API_ENDPOINT}/api/users/create`, requestOptions)
         .then((res) => {
           return res.json();

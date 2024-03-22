@@ -3,7 +3,6 @@ import { useNavigate, Outlet } from "react-router-dom";
 function Home() {
   const navigate = useNavigate();
   const handleClick = () => {
-    console.log('clicked in home component');
     navigate('/register');
   }
   return (
