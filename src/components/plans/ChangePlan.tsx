@@ -4,8 +4,6 @@ import * as env from '../../constants';
 import { Plan } from "../../interfaces/Plan";
 
 export default function ChangePlan() {
-  const [planData, setPlanData] = useState<Plan>();
-  const [plans, setPlans] = useState<Plan[]>([]);
   const [newPlan, setNewPlan] = useState<Plan>();
   const location = useLocation();
   const navigate = useNavigate();
@@ -20,7 +18,7 @@ export default function ChangePlan() {
       .then((res) => {
         return res.json();
       })
-      .then((data) => {
+      .then((_data) => {
         navigate('/customers');
       });
       
@@ -31,7 +29,6 @@ export default function ChangePlan() {
         return res.json();
       })
       .then((data) => {
-        setPlans(data);
         let plan: Plan | undefined = undefined;
         let existingPlan = location.state.existingPlan;
         switch(location.state.changeMode) {

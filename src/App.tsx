@@ -10,16 +10,14 @@ import ChangePlan from './components/plans/ChangePlan';
 function App() {
 
   return (
-    <>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/register' element={<RegisterCustomer />} />
-        <Route path='/choose-plan' element={<Plans />} />
-        <Route path='/customers' element={<CustomersList />} />
-        <Route path='/renew-plan' element={<RenewPlan />} />
-        <Route path='/change-plan' element={<ChangePlan />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/register' element={<RegisterCustomer />} />
+      <Route path='/choose-plan' element={<Plans />} />
+      <Route path='/customers' element={<CustomersList />} />
+      <Route path='/renew-plan' element={<RenewPlan />} />
+      <Route path='/change-plan' element={<ChangePlan />} />
+    </Routes>
   )
 }
 

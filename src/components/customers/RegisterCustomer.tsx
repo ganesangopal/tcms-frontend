@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function RegisterCustomer() {
 	// States for registration
-  const [userData, setUserData] = useState({});
 	const [name, setName] = useState("");
   const [dob, setDob] = useState("");
 	const [email, setEmail] = useState("");
@@ -53,7 +52,6 @@ export default function RegisterCustomer() {
         email: email,
         aadhaarNumber: aadhaarNum
       };
-      // setUserData(userObj);
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -64,7 +62,6 @@ export default function RegisterCustomer() {
           return res.json();
         })
         .then((data) => {
-          setUserData(data);
           localStorage.setItem('loginId', data.id);
           navigate('/choose-plan');
         });
@@ -100,7 +97,7 @@ export default function RegisterCustomer() {
 	};
 
 	return (
-		<div className="form">
+		<div className="form form-group" text-align={"left"}>
 			<div>
 				<h1>User Registration</h1>
 			</div>
@@ -111,7 +108,7 @@ export default function RegisterCustomer() {
 				{successMessage()}
 			</div>
 
-			<form>
+			<form style={{textAlign:"left"}}>
 				{/* Labels and inputs for form data */}
         <div>
           <label className="label">Name</label>
@@ -120,6 +117,7 @@ export default function RegisterCustomer() {
             className="input"
             value={name}
             type="text"
+						style={{marginLeft: '15%', marginBottom: '3%'}}
           />
         </div>
 
@@ -131,6 +129,7 @@ export default function RegisterCustomer() {
             className="input"
             value={dob}
             type="date"
+						style={{marginLeft: '16%', marginBottom: '3%'}}
           />
         </div>
 
@@ -142,6 +141,7 @@ export default function RegisterCustomer() {
             className="input"
             value={email}
             type="email"
+						style={{marginLeft: '15%', marginBottom: '3%'}}
           />
         </div>
 
@@ -154,11 +154,12 @@ export default function RegisterCustomer() {
             value={aadhaarNum}
             type="text"
             maxLength={12}
+						style={{marginLeft: '2%', marginBottom: '3%'}}
           />
         </div>
 
         <div>
-          <button onClick={handleSubmit} className="btn btn-primary" type="submit">
+          <button id="cust-form-submit" onClick={handleSubmit} className="btn btn-primary" type="submit">
             Submit
           </button>
         </div>

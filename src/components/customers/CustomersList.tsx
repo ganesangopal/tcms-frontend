@@ -17,7 +17,7 @@ export default function CustomersList() {
       });
   }, [])
   return (
-    <>
+    <div>
       <h3>Customers</h3>
       <table border={1} align={"center"} className="table">
         <thead className="thead-light">
@@ -45,6 +45,6 @@ export default function CustomersList() {
           })}
         </tbody>
       </table>
-    </>
+    </div>
   )
 }

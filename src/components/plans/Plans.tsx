@@ -27,7 +27,7 @@ export default function Plans() {
       .then((res) => {
         return res.json();
       })
-      .then((data) => {
+      .then((_data) => {
         navigate('/customers');
       });
   }
