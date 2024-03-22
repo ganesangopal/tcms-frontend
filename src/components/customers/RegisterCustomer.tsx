@@ -158,7 +158,7 @@ export default function RegisterCustomer() {
         </div>
 
         <div>
-          <button onClick={handleSubmit} className="btn" type="submit">
+          <button onClick={handleSubmit} className="btn btn-primary" type="submit">
             Submit
           </button>
         </div>

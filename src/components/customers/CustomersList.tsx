@@ -19,27 +19,27 @@ export default function CustomersList() {
   return (
     <>
       <h3>Customers</h3>
-      <table border={1} align={"center"}>
-        <thead>
+      <table border={1} align={"center"} className="table">
+        <thead className="thead-light">
           <tr>
-            <th>Name</th>
-            <th>DOB</th>
-            <th>Email</th>
-            <th>Registered Date</th>
-            <th>Phone Number</th>
-            <th>Plan Id</th>
+            <th scope={"col"}>Name</th>
+            <th scope={"col"}>DOB</th>
+            <th scope={"col"}>Email</th>
+            <th scope={"col"}>Registered Date</th>
+            <th scope={"col"}>Phone Number</th>
+            <th scope={"col"}>Plan Id</th>
           </tr>
         </thead>
         <tbody>
           {customersList.map(customer => {
             return (
               <tr key={customer.id}>
-                <td>{customer.name}</td>
-                <td>{customer.dob}</td>
-                <td>{customer.email}</td>
-                <td>{moment(customer.registeredDate).format('YYYY-MM-DD HH:MM:SS')}</td>
-                <td>{customer.assignedMobileNumber}</td>
-                <td>{customer.planId}</td>
+                <td scope={"row"}>{customer.name}</td>
+                <td scope={"row"}>{customer.dob}</td>
+                <td scope={"row"}>{customer.email}</td>
+                <td scope={"row"}>{moment(customer.registeredDate).format('YYYY-MM-DD HH:MM:SS')}</td>
+                <td scope={"row"}>{customer.assignedMobileNumber}</td>
+                <td scope={"row"}>{customer.planId}</td>
               </tr>
             )
           })}
